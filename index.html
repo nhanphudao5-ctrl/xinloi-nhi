@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Xin lỗi Nhi 💔</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial;
+    background: linear-gradient(to right, #ff9a9e, #fad0c4);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Khung chính */
+.box {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    max-width: 500px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* Tiêu đề */
+h1 {
+    color: #ff4d6d;
+}
+
+/* Nội dung */
+p {
+    font-size: 18px;
+    color: #444;
+}
+
+/* Nút */
+button {
+    margin-top: 20px;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 25px;
+    background: #ff4d6d;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Hiệu ứng trái tim */
+.heart {
+    position: absolute;
+    color: red;
+    font-size: 20px;
+    animation: float 5s linear infinite;
+}
+
+@keyframes float {
+    0% {transform: translateY(0);}
+    100% {transform: translateY(-100vh);}
+}
+
+/* Tin nhắn */
+#reply {
+    display: none;
+    margin-top: 20px;
+    color: green;
+    font-size: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+    <h1>Nhi ơi, anh xin lỗi 💔</h1>
+
+    <p>
+        Anh biết mình đã làm em buồn...<br>
+        Anh thật sự rất hối hận.<br>
+        Nhi luôn là người quan trọng nhất với anh.<br>
+        Anh không muốn mất em 🥺
+    </p>
+
+    <button onclick="showReply()">Tha lỗi cho anh nha 💕</button>
+
+    <div id="reply">
+        Cảm ơn Nhi ❤️ Anh hứa sẽ thay đổi!
+    </div>
+</div>
+
+<script>
+function showReply() {
+    document.getElementById("reply").style.display = "block";
+}
+
+/* Tạo trái tim bay */
+setInterval(() => {
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (Math.random() * 20 + 10) + "px";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 5000);
+}, 500);
+</script>
+
+</body>
+</html>
